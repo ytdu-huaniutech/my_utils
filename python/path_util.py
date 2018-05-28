@@ -12,3 +12,8 @@ print(os.listdir('.'))
 
 # get basename
 print(os.path.basename('a/bb.ccc'))
+
+# wildcard
+import glob
+for f in glob.glob("*.f"):
+    print(f)
