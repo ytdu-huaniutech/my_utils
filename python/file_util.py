@@ -29,3 +29,13 @@ def best_match_files(file_name):
     if os.path.isdir(file_name):
         file_name = os.path(file_name, '*')
     return glob.glob(file_name)
+
+
+# make dir if not exist
+def ensure_dir(file_path):
+    import errno
+    try:
+        os.makedirs(directory)
+    except OSError as e:
+        if e.errno != errno.EEXIST:
+            raise
