@@ -1,0 +1,18 @@
+syntax = "proto3";
+
+package hello;
+
+option go_package = "p";
+
+service Hello {
+    rpc Hello(HelloInput) returns (HelloOutput);
+}
+
+message HelloInput {
+    string name = 1;
+    int32 repeat = 2;
+}
+
+message HelloOutput {
+    string hello_message = 1;
+}
