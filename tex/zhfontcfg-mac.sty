@@ -1,0 +1,23 @@
+% xetex/xelatex 字体设定宏包
+% run `fc-list :lang=zh` to get installed fonts for Chinese
+
+\ProvidesPackage{zhfontcfg}
+\usepackage[utf8]{inputenc}
+\usepackage{fontspec,xunicode}
+
+\usepackage[slantfont, boldfont, CJKspace, CJKmath]{xeCJK} % 允许斜体和粗体
+\setCJKmainfont{Songti SC} % 缺省中文字体
+\setCJKsansfont{Heiti SC} % 中文无衬线字体
+\setCJKmonofont{.PingFang SC} % 中文等宽字体
+
+\setmainfont{Times New Roman} % 英文衬线字体
+\setsansfont{Arial} % 英文无衬线字体
+\setmonofont{Andale Mono} % 英文等宽字体
+
+\usepackage{indentfirst} % 首段缩进
+
+\defaultfontfeatures{Mapping=tex-text} %如果没有它，会有一些 tex 特殊字符无法正常使用，比如连字符。
+
+% 中文断行
+\XeTeXlinebreaklocale "zh"
+\XeTeXlinebreakskip = 0pt plus 1pt minus 0.1pt
