@@ -10,6 +10,7 @@ def get_logger(name, level=logging.INFO, format=basic_format):
     handler = logging.StreamHandler(sys.stderr)
     handler.setFormatter(logging.Formatter(format))
     logger.addHandler(handler)
+    logger.propagate = False
     return logger
 
 
